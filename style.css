@@ -1,0 +1,224 @@
+html {
+    overflow: hidden;
+    
+  }
+  html * {
+    box-sizing: border-box;
+    letter-spacing: -50%;
+  }
+  
+  :root {
+    --black : #000000 ;
+    --white : #ffffff ;
+    --darkgray : #333333 ;
+    --gray : #999999 ;
+    --blue : #0692e7 ;
+    --yellow : #F9D300 ;
+    --red : #E70606 ;
+    --bgGray : #f8f8fa;
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    padding: 70px;
+    overflow: hidden;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .left {
+    width: 70%;
+    /* background-color: #0692e7; */
+    position: relative;
+  }
+  .state h1 {
+    font-size: 170px;
+    line-height: 170px;
+    font-weight: 900;
+  }
+  .stateImg img {
+    height: 450px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .right {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+  .logo img {
+    width: 134px;
+  }
+  .room {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 70px;
+  }
+  .room h3 {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 76px;
+    color: var(--darkgray);
+  }
+  .room .position {
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 44px;
+    color: var(--gray);
+  }
+  .menu {
+    width: calc(100% - 60px);
+    height: 194px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: var(--bgGray);
+    border-radius: 20px;
+    bottom: -160px;
+  }
+  .menu.off {
+    bottom: -160px;
+    transition: ease-in-out 300ms;
+  }
+  .menu.on {
+    bottom: 30px;
+    transition: ease-in-out 300ms;
+  }
+  .upDownBtn {
+    width: 100px;
+    height: 60px;
+    background-image: url('./img/udBtnBg.svg');
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .fa-chevron-up {
+    font-size: 35px;
+  }
+  .fa-chevron-up.on {
+    transform: rotate(180deg);
+    transition: ease-in-out 300ms;
+  }
+  .fa-chevron-up.off {
+    transform: rotate(00deg);
+    transition: ease-in-out 300ms;
+  }
+  .menuContent {
+    width: calc(100% - 80px);
+    overflow: auto hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin: 40px;
+  }
+  .menuContent::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 39px;
+    width: 50px;
+    height: 100%;
+    background: rgb(248,248,250);
+    background: linear-gradient(90deg, rgba(248,248,250,1) 0%, rgba(248,248,250,0) 100%);
+  }
+  .menuContent::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 39px;
+    width: 50px;
+    height: 100%;
+    background: rgb(248,248,250);
+    background: linear-gradient(-90deg, rgba(248,248,250,1) 0%, rgba(248,248,250,0) 100%);
+  }
+  .stateBtn {
+    padding: 0 calc(100% - 98px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: auto 40px;
+    scroll-snap-align: start;
+  }
+  .btnBox {
+    width: 120px;
+    height: 120px;
+    background-color: var(--white);
+    border: 2px solid #eeeeee;
+    border-radius: 20px;
+    padding: 15px;
+  
+  }
+  .btnBox img {
+    width: 56px;
+    margin-bottom: 8px;
+  }
+  .btnBox div {
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
+  }
+
+  @media (min-width: 1281px) {
+    .logo img {
+        width: 30%;
+    }
+    .room h3 {
+        font-size: 5vw;
+        line-height: 120%;
+    } 
+    .room .position {
+        font-size: 3vw;
+        line-height: 120%;
+    }
+    .state h1 {
+        font-size: 13vw;
+        line-height: 120%;
+    }
+    .stateImg img {
+        height: 60%;
+    }
+    .menu {
+      height: 26vh;
+    }
+    .stateBtn {
+      padding: 0;
+    }
+    .btnBox {
+      width: 10vw;
+      height: 10vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5%;
+      padding: 0;
+    }
+    .btnBox > * {
+      width: 100%;
+    }
+    .btnBox img {
+      width: 50%;
+    }
+    .btnBox div {
+      font-size: 1.5vw;
+    }
+    .menu {
+      bottom: -23vh;
+    }
+    .menu.off {
+      bottom: -23vh;
+    }
+}
